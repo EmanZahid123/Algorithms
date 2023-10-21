@@ -1,0 +1,27 @@
+def selection_sort(a):
+    for i in range(0,len(a)-1):
+        min_index=i
+        for j in range(i+1,len(a)):
+            if a[j]<a[min_index]:
+                min_index=j
+        a[i],a[min_index]=a[min_index],a[i]
+    return a
+def main():
+    a=[2,5,4,6,1,3]
+    print(selection_sort(a))
+main ()
+for row in board:
+        if all(cell == 'X' for cell in row):
+            return 'X Wins'
+        if all(cell == 'O' for cell in row):
+            return 'O Wins'
+
+    for col in range(3):
+        if all(board[row][col] == 'X' for row in range(3)):
+            return 'X Wins'
+        if all(board[row][col] == 'O' for row in range(3)):
+            return 'O Wins'
+    if all(board[i][i] == 'X' for i in range(3)) or all(board[i][2 - i] == 'X' for i in range(3)):
+        return 'X Wins'
+    if all(board[i][i] == 'O' for i in range(3)) or all(board[i][2 - i] == 'O' for i in range(3)):
+        return 'O Wins'
